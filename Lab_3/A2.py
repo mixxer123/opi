@@ -1,6 +1,6 @@
 import string
 
-def checkPassword(password):
+def check_password(password):
     errors = []
     
     allowed_chars = string.ascii_uppercase + string.ascii_lowercase + string.digits + '*-#'
@@ -30,4 +30,4 @@ def checkPassword(password):
             print(error)
 
 user_password = input("Введите пароль: ")
-checkPassword(user_password)
+check_password(user_password)
