@@ -13,8 +13,12 @@ def format_pos(pos):
 
 
 def main():
-    with open(INPUT_FILE, "r", encoding="utf-8") as f:
-        raw_lines = [line.split() for line in f if line.strip() != ""]
+    try:
+        with open(INPUT_FILE, "r", encoding="utf-8") as f:
+            raw_lines = [line.split() for line in f if line.strip() != ""]
+    except:
+        print("Ошибка: файл не найден.")
+        return
 
     rows = int(raw_lines[0][0])
     cols = int(raw_lines[0][1])
