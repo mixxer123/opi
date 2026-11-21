@@ -15,8 +15,8 @@ def format_pos(pos):
 def main():
     try:
         with open(INPUT_FILE, "r", encoding="utf-8") as f:
-            raw_lines = [line.split() for line in f if line.strip() != ""]
-    except:
+            raw_lines = [line.split() for line in f if line.strip()]
+    except FileNotFoundError:
         print("Ошибка: файл не найден.")
         return
 
