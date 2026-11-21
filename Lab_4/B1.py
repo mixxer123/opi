@@ -27,9 +27,13 @@ def process_precipitation_data():
     input_filename = "Precip.txt"
     output_filename = "Report.txt"
 
-    with open(input_filename, "r", encoding="utf-8") as f:
-        lines = f.readlines()
-
+    try:
+        with open(input_filename, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+    except FileNotFoundError:
+        print(f"Файл {input_filename} не найден.")
+        return
+    
     # заголовки
     project_header = lines[0].strip()
     station_location = lines[1].strip()
